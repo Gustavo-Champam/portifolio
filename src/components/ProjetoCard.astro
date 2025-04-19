@@ -17,12 +17,7 @@ const prevId = index > 0 ? `btn-${index - 1}` : null;
     class="w-full aspect-[4/3] overflow-hidden"
     aria-label={`Ampliar imagem de ${titulo}`}
   >
-    <img
-      src={imagem}
-      alt={titulo}
-      class="w-full h-full object-cover transition hover:scale-105 duration-300 cursor-zoom-in"
-      loading="lazy"
-    />
+    <img src={imagem} alt={titulo} class="w-full h-full object-cover transition hover:scale-105 duration-300 cursor-zoom-in" loading="lazy" />
   </button>
   <div class="p-6">
     <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{titulo}</h3>
@@ -115,7 +110,6 @@ const prevId = index > 0 ? `btn-${index - 1}` : null;
     max-height: 100vh;
     object-fit: contain;
   }
-
   :fullscreen .modal-title,
   :fullscreen .modal-desc {
     color: white;
