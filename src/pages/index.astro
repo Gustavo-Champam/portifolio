@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-// 🔥 Removido o import quebrado: import logoImg from '~/images/logo.png';
+import logoImg from '~/images/logo.png'; // Caminho correto da imagem
 
 const metadata = {
   title: 'Regiane Gimenez | Arquiteta',
@@ -9,6 +9,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- HERO -->
   <!-- HERO -->
   <Hero
     actions={[
@@ -51,7 +52,7 @@ const metadata = {
           </div>
           <h3 class="text-lg font-semibold mb-2">Projetos Arquitetônicos</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300">
-            Projetos personalizados que integram conforto, funcionalidade e estética, com foco em soluções inspiradoras para viver e trabalhar.
+            Projetos personalizados que integram conforto, funcionalidade e estética.
           </p>
         </div>
 
@@ -64,7 +65,7 @@ const metadata = {
           </div>
           <h3 class="text-lg font-semibold mb-2">Projetos de Interiores</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300">
-            Espaços únicos e funcionais com foco nas tendências modernas e necessidades dos clientes.
+            Espaços únicos e funcionais com foco nas tendências e nas necessidades dos clientes.
           </p>
         </div>
 
@@ -77,7 +78,7 @@ const metadata = {
           </div>
           <h3 class="text-lg font-semibold mb-2">Reformas</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300">
-            Retoques ou transformações completas com soluções estéticas e funcionais.
+            Reformas com soluções práticas, estéticas e personalizadas.
           </p>
         </div>
 
@@ -90,7 +91,7 @@ const metadata = {
           </div>
           <h3 class="text-lg font-semibold mb-2">Regularização de Imóveis</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300">
-            Garantimos segurança legal em processos de regularização e burocracia imobiliária.
+            Cuidamos da documentação e legalização de imóveis com responsabilidade.
           </p>
         </div>
       </div>
