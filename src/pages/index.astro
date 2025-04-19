@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import logoImg from '~/images/logo.png';
+// 🔥 Removido o import quebrado: import logoImg from '~/images/logo.png';
 
 const metadata = {
   title: 'Regiane Gimenez | Arquiteta',
@@ -11,10 +11,6 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HERO -->
   <Hero
-    image={{
-      src: logoImg,
-      alt: 'Logo de Regiane Gimenez',
-    }}
     actions={[
       {
         variant: 'primary',
