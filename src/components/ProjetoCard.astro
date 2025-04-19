@@ -1,0 +1,118 @@
+---
+const { titulo, descricao, imagem, index, total } = Astro.props;
+
+const modalId = `modal-${index}`;
+const btnId = `btn-${index}`;
+const nextId = index < total - 1 ? `btn-${index + 1}` : null;
+const prevId = index > 0 ? `btn-${index - 1}` : null;
+---
+
+<!-- CARD -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 dark:border-slate-700">
+  <button
+    id={btnId}
+    data-img={imagem}
+    data-title={titulo}
+    data-desc={descricao}
+    class="w-full aspect-[4/3] overflow-hidden"
+    aria-label={`Ampliar imagem de ${titulo}`}
+  >
+    <img src={imagem} alt={titulo} class="w-full h-full object-cover transition hover:scale-105 duration-300 cursor-zoom-in" loading="lazy" />
+  </button>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{titulo}</h3>
+    <p class="text-gray-600 dark:text-gray-300 text-sm">{descricao}</p>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id={modalId} class="hidden fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center backdrop-blur-sm px-4 text-white text-center">
+  <div class="relative max-w-4xl w-full">
+    {prevId && (
+      <button class="absolute left-4 top-1/2 -translate-y-1/2 prev bg-white/10 hover:bg-white/30 text-white rounded-full p-2" data-prev={`btn-${prevId}`}>&larr;</button>
+    )}
+    {nextId && (
+      <button class="absolute right-4 top-1/2 -translate-y-1/2 next bg-white/10 hover:bg-white/30 text-white rounded-full p-2" data-next={`btn-${nextId}`}>&rarr;</button>
+    )}
+    <div class="fullscreen-container cursor-zoom-in">
+      <img class="mx-auto max-w-full max-h-[80vh] rounded-lg border border-white/30 shadow-2xl transition" src="" alt="Imagem do projeto" />
+      <h2 class="modal-title text-xl font-bold mt-4"></h2>
+      <p class="modal-desc mt-2 text-base text-slate-300"></p>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT FUNCIONAL -->
+<script is:inline data-modal={modalId} data-btn={btnId}>
+  const script = document.currentScript;
+  const modalId = script.dataset.modal;
+  const btnId = script.dataset.btn;
+
+  window.addEventListener('load', () => {
+    const modal = document.getElementById(modalId);
+    const openBtn = document.getElementById(btnId);
+    const modalImg = modal?.querySelector('img');
+    const modalTitle = modal?.querySelector('.modal-title');
+    const modalDesc = modal?.querySelector('.modal-desc');
+    const fullscreenContainer = modal?.querySelector('.fullscreen-container');
+    const next = modal?.querySelector('.next');
+    const prev = modal?.querySelector('.prev');
+
+    if (openBtn && modal && modalImg && modalTitle && modalDesc) {
+      openBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modalImg.src = openBtn.dataset.img;
+        modalTitle.textContent = openBtn.dataset.title;
+        modalDesc.textContent = openBtn.dataset.desc;
+      });
+    }
+
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modalImg.src = '';
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    next?.addEventListener('click', () => {
+      document.getElementById(next.dataset.next)?.click();
+    });
+
+    prev?.addEventListener('click', () => {
+      document.getElementById(prev.dataset.prev)?.click();
+    });
+
+    fullscreenContainer?.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        fullscreenContainer.requestFullscreen().catch(console.error);
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modal.classList.add('hidden');
+        modalImg.src = '';
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  :fullscreen img {
+    max-height: 100vh;
+    object-fit: contain;
+  }
+  :fullscreen .modal-title,
+  :fullscreen .modal-desc {
+    color: white;
+    margin-top: 1rem;
+  }
+</style>

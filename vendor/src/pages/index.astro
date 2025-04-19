@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Regiane Gimenez | Arquiteta',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    image={{ src: '/assets/images/regiane-hero.jpg', alt: 'Foto projeto de arquitetura' }}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Ver Projetos',
+        href: '/projetos',
+        icon: 'tabler:building-architecture',
+      },
+      {
+        text: 'Sobre mim',
+        href: '/sobre',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Arquitetura que transforma espaços em <span class="text-accent dark:text-white">experiências</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Regiane Gimenez desenvolve projetos residenciais, interiores e paisagísticos com sofisticação, técnica e olhar sensível.
+    </Fragment>
+  </Hero>
+</Layout>

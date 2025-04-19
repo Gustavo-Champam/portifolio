@@ -12,7 +12,6 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
-// Comment the line below to disable View Transitions
 import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
@@ -36,13 +35,20 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
-    <!-- Comment the line below to disable View Transitions -->
+    <!-- ✅ Font Awesome para os ícones nos serviços -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-9e9Ih8UsGn4FKmTSIyt7gJJbD8MxiT4Q5RexqvMt0R7lREs8QgDq0+JZCkC0PKE/qf5vXCFDOujv4MF2wHck4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <ClientRouter fallback="swap" />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
     <slot />
-
     <BasicScripts />
   </body>
 </html>

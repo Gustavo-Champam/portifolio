@@ -2,24 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🌙 Variáveis de Tema */
+:root {
+  --aw-color-bg-page: #ffffff;
+  --aw-color-bg-page-dark: #0f172a;
+
+  --aw-color-text-page: #1f2937;
+  --aw-color-text-default: #1f2937;
+  --aw-color-text-muted: #6b7280;
+
+  --aw-color-primary: #1c64f2;
+  --aw-color-secondary: #4f46e5;
+  --aw-color-accent: #10b981;
+}
+
+.dark {
+  --aw-color-bg-page: #0f172a;
+  --aw-color-bg-page-dark: #0f172a;
+
+  --aw-color-text-page: #f3f4f6;
+  --aw-color-text-default: #f3f4f6;
+  --aw-color-text-muted: #9ca3af;
+
+  --aw-color-primary: #3b82f6;
+  --aw-color-secondary: #6366f1;
+  --aw-color-accent: #34d399;
+}
+
+/* 🌐 Utilitários personalizados */
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
   }
+
   .bg-dark {
     background-color: var(--aw-color-bg-page-dark);
   }
+
   .bg-light {
     background-color: var(--aw-color-bg-page);
   }
+
   .text-page {
     color: var(--aw-color-text-page);
   }
+
   .text-muted {
     color: var(--aw-color-text-muted);
   }
 }
 
+/* 🧩 Componentes reutilizáveis */
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
@@ -38,18 +71,17 @@
   }
 }
 
+/* 🎯 Estilos específicos */
 #header.scroll > div:first-child {
   @apply bg-page md:bg-white/90 md:backdrop-blur-md;
   box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
 }
+
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
   @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
   box-shadow: none;
 }
-/* #header.scroll > div:last-child {
-  @apply py-3;
-} */
 
 #header.expanded nav {
   position: fixed;
@@ -66,6 +98,7 @@
   display: block;
 }
 
+/* Ícones e animações */
 [astro-icon].icon-light > * {
   stroke-width: 1.2;
 }
@@ -80,13 +113,11 @@
 [data-aw-toggle-menu].expanded g > path:first-child {
   @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
 }
-
 [data-aw-toggle-menu].expanded g > path:last-child {
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-/* To deprecated */
-
+/* Espaçamento opcional para elementos internos */
 .dd *:first-child {
   margin-top: 0;
 }

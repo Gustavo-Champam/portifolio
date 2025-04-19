@@ -1,0 +1,43 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ProjetoCard from '~/components/ProjetoCard.astro';
+
+const metadata = {
+  title: 'Projetos | Regiane Gimenez',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="py-16 px-6 bg-gray-50 dark:bg-slate-900 min-h-screen">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-serif font-bold text-center mb-12 text-gray-800 dark:text-white">Projetos</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Cards gerados automaticamente -->
+        <ProjetoCard titulo="Sobrado moderno 9x20" descricao="Sobrado com terreno 9x20, casa moderna, destacando a entrada com placas de lajotinha, exibindo sua volumetria, com um toque do rústico." imagem="/src/images/Imagem1.jpg" index={0} total={23} />
+        <ProjetoCard titulo="Casa em condomínio moderna" descricao="Casa em condomínio, assobradada, estilo moderno, destaque da fachada à iluminação em LED e mistura de materiais." imagem="/src/images/Imagem2.jpg" index={1} total={23} />
+        <ProjetoCard titulo="Condomínio com harmonia de cores" descricao="Casa em condomínio, fachada com composição de cores e diferentes materiais criando uma harmonização e modernidade." imagem="/src/images/Imagem3.jpg" index={2} total={23} />
+        <ProjetoCard titulo="Integração salas e cozinha" descricao="Ambientes de sala e cozinha integrados, estilo atemporal com pé-direito alto, formando um único e amplo ambiente." imagem="/src/images/Imagem4.jpg" index={3} total={23} />
+        <ProjetoCard titulo="Residência rústico-industrial" descricao="Residência em telhado embutido, exploração de geometria na fachada com mistura de materiais rústicos e industrial." imagem="/src/images/Imagem5.jpg" index={4} total={23} />
+        <ProjetoCard titulo="Casa com telhados mistos" descricao="Casa com misturas de estilo de telhado, jogando com volumes e materiais para um efeito contemporâneo." imagem="/src/images/Imagem6.jpg" index={5} total={23} />
+        <ProjetoCard titulo="Residência 9x20 com LED" descricao="Residência com terreno 9x20, fachada priorizando linhas retas, com perfil de LED que destaca o design moderno." imagem="/src/images/Imagem7.jpg" index={6} total={23} />
+        <ProjetoCard titulo="Térrea sofisticada com pedras" descricao="Residência térrea em condomínio, com aplique de pedras naturais e iluminação indireta que destaca a fachada." imagem="/src/images/Imagem8.jpg" index={7} total={23} />
+        <ProjetoCard titulo="Obra 2017 - Volumes e luz" descricao="Residência em condomínio com jogos de volumes e grandes aberturas para entrada de luz natural." imagem="/src/images/Imagem9.jpg" index={8} total={23} />
+        <ProjetoCard titulo="Lazer na frente" descricao="Residência com área de lazer na frente, promovendo integração dos ambientes sociais." imagem="/src/images/Imagem10.jpg" index={9} total={23} />
+        <ProjetoCard titulo="Cozinha e gourmet integrados" descricao="Integração entre cozinha e gourmet por meio de grandes vãos em vidro. Destaque para volumetria e paisagismo." imagem="/src/images/Imagem11.jpg" index={10} total={23} />
+        <ProjetoCard titulo="Churrasqueira leve e sofisticada" descricao="Churrasqueira com estrutura de vidro e inox, gerando leveza e sofisticação no ambiente gourmet." imagem="/src/images/Imagem12.jpg" index={11} total={23} />
+        <ProjetoCard titulo="Jardim integrado ao banheiro" descricao="Banheiro da suíte com jardim integrado, promovendo charme e conexão com o verde." imagem="/src/images/Imagem13.jpg" index={12} total={23} />
+        <ProjetoCard titulo="Churrasqueira em inox e vidro" descricao="Churrasqueira em inox e vidro, com sensação de ambiente mais leve e sofisticado." imagem="/src/images/Imagem14.jpg" index={13} total={23} />
+        <ProjetoCard titulo="Residência em estilo rústico" descricao="Residência em condomínio com estilo rústico, explorando grandes vãos e pé-direito com lambril para aconchego." imagem="/src/images/Imagem15.jpg" index={14} total={23} />
+        <ProjetoCard titulo="Rústico moderno industrial" descricao="Mistura do estilo rústico com o moderno e o industrial, integrando cozinha e área gourmet com vãos amplos." imagem="/src/images/Imagem16.jpg" index={15} total={23} />
+        <ProjetoCard titulo="Integração com paisagismo" descricao="Cozinha integrada com paisagismo e área gourmet, destacando materiais naturais e acolhimento." imagem="/src/images/Imagem17.jpg" index={16} total={23} />
+        <ProjetoCard titulo="Pérgolas em destaque" descricao="Destaque para as pérgolas de entrada, trazendo sombra, beleza e modernidade para a residência." imagem="/src/images/Imagem18.jpg" index={17} total={23} />
+        <ProjetoCard titulo="Gourmet rústico-industrial" descricao="Área gourmet que mistura elementos rústicos e industriais com acabamentos modernos como cuba esculpida e nichos." imagem="/src/images/Imagem19.jpg" index={18} total={23} />
+        <ProjetoCard titulo="Acabamentos modernos" descricao="Utilização de cuba esculpida, espelhos e nichos para um ambiente moderno e elegante." imagem="/src/images/Imagem20.jpg" index={19} total={23} />
+        <ProjetoCard titulo="Cascata com charme" descricao="Pedregulho usado para drenagem. A parede com cascata oculta o varal e valoriza o espaço gourmet." imagem="/src/images/Imagem21.jpg" index={20} total={23} />
+        <ProjetoCard titulo="Integração total dos espaços" descricao="Ambientes totalmente integrados e abertos para iluminação e circulação." imagem="/src/images/Imagem22.jpg" index={21} total={23} />
+        <ProjetoCard titulo="Fachada contemporânea com LED" descricao="Fachada contemporânea com iluminação de LED, realçando o paisagismo e detalhes em madeira." imagem="/src/images/Imagem23.jpg" index={22} total={23} />
+      </div>
+    </div>
+  </section>
+</Layout>

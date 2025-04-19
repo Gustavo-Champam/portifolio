@@ -1,0 +1,13 @@
+---
+const { titulo, descricao, imagem } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
+  {imagem && (
+    <img src={imagem} alt={titulo} class="w-full h-48 object-cover" loading="lazy" />
+  )}
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2">{titulo}</h3>
+    <p class="text-gray-600 text-sm">{descricao}</p>
+  </div>
+</div>
