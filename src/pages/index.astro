@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import logoImg from '~/images/logo.png'; // Caminho correto da imagem em minúsculo
 
 const metadata = {
   title: 'Regiane Gimenez | Arquiteta',
@@ -9,8 +10,13 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- HERO -->
-  <!-- HERO -->
   <Hero
+    image={{
+      src: logoImg,
+      alt: 'Logo de Regiane Gimenez',
+      width: 300,
+      height: 300,
+    }}
     actions={[
       {
         variant: 'primary',
